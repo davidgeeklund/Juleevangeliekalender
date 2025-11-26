@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Himmelsk Julekalender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              christmas: ['"Mountains of Christmas"', 'cursive'],
+              body: ['"Quicksand"', 'sans-serif'],
+            },
+            colors: {
+              'advent-gold': '#FFD700',
+              'advent-red': '#8B0000',
+              'advent-green': '#006400',
+              'night-blue': '#0f172a',
+              'star-light': '#fffbeb',
+            },
+            backgroundImage: {
+              'starry-night': "radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)",
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      .snow-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .snowflake {
+        position: absolute;
+        top: -10px;
+        color: white;
+        animation: fall linear infinite;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(100vh);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-night-blue text-white font-body">
+    <div id="root"></div>
+  </body>
+</html>
